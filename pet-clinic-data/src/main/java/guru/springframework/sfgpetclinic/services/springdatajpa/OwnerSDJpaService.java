@@ -5,12 +5,14 @@ import guru.springframework.sfgpetclinic.repositories.OwnerRepository;
 import guru.springframework.sfgpetclinic.repositories.PetRepository;
 import guru.springframework.sfgpetclinic.repositories.PetTypeRepository;
 import guru.springframework.sfgpetclinic.services.OwnerService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Slf4j
 @Profile("springdatajpa")
 @Component
 public class OwnerSDJpaService implements OwnerService {
@@ -45,6 +47,10 @@ public class OwnerSDJpaService implements OwnerService {
 
     @Override
     public Owner save(Owner object) {
+        System.out.println("####################################");
+        System.out.println("####################################");
+        System.out.println("####################################");
+        System.out.println("####################################");
         return null;
     }
 
