@@ -5,16 +5,14 @@ import guru.springframework.sfgpetclinic.repositories.OwnerRepository;
 import guru.springframework.sfgpetclinic.repositories.PetRepository;
 import guru.springframework.sfgpetclinic.repositories.PetTypeRepository;
 import guru.springframework.sfgpetclinic.services.OwnerService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Slf4j
+@Service
 @Profile("springdatajpa")
-@Component
 public class OwnerSDJpaService implements OwnerService {
 
     private final OwnerRepository ownerRepository;
@@ -30,6 +28,7 @@ public class OwnerSDJpaService implements OwnerService {
 
     @Override
     public Owner findByLastName(String lastName) {
+
         return ownerRepository.findByLastName(lastName);
     }
 
@@ -47,18 +46,16 @@ public class OwnerSDJpaService implements OwnerService {
 
     @Override
     public Owner save(Owner object) {
-        return null;
+        return ownerRepository.save(object);
     }
 
     @Override
     public void delete(Owner object) {
-
+        ownerRepository.delete(object);
     }
 
     @Override
     public void deleteById(Long aLong) {
-
+        ownerRepository.deleteById(aLong);
     }
-
-
 }
